@@ -61,6 +61,9 @@
       <label for="desc-field">Short Description</label>
       <p class="help-text" id="desc-help">Describe your bug in a single sentence</p>
       <input type="text" id="desc-field" aria-describedby="desc-help" required>
+      <label for="exp-field">Expected Result</label>
+      <p class="help-text" id="exp-help">What *should* happen when following the steps? (i.e. if the bug didn't occur)</p>
+      <input type="text" id="exp-field" aria-describedby="exp-help" required>
       <label>Steps to Reproduce</label>
       <p class="help-text" id="steps-help">Write each step others would have to follow to reproduce the bug. Note: Dashes will be added automatically for each step. To add/remove fields, you can use the buttons below</p>
       <div class="callout mbox" id="steps-fs">
@@ -73,9 +76,6 @@
           <input type="text" class="input-group-field" id="s1-field" required>
         </div>
       </div>
-      <label for="exp-field">Expected Result</label>
-      <p class="help-text" id="exp-help">What *should* happen when following the steps? (i.e. if the bug didn't occur)</p>
-      <input type="text" id="exp-field" aria-describedby="exp-help" required>
       <label for="act-field">Actual Result</label>
       <p class="help-text" id="act-help">What *actually* happens when following the steps?</p>
       <input type="text" id="act-field" aria-describedby="act-help" required>
@@ -94,30 +94,6 @@
         <pre class="bug-syntax" id="syntax"></pre>
         <button type="button" class="button cb-btn" id="copy-btn">Copy</button>
       </div>
-    </div>
-    <div class="reveal" id="client-ver-modal" data-reveal>
-      <h4>Finding your Discord client version</h4>
-      <dl>
-        <dt>Android/iOS</dt>
-        <dd>
-          <ul>
-            <li>Open the Settings menu and scroll down</li>
-            <li>The version number should be listed at the bottom or next to the 'Change Log' entry</li>
-            <li>Also include if you're using a Testflight (inc. build number) or Alpha/Beta build</li>
-          </ul>
-        </dd>
-        <dt>Desktop</dt>
-        <dd>
-          <ul>
-            <li>Open Dev Tools using <kbd>Ctrl+Shift+I</kbd> (Windows/Linux) or <kbd>Cmd+Opt+I</kbd> (macOS)</li>
-            <li>Click the Console tab</li>
-            <li>Scroll up and find the entry beginning '[BUILD INFO]'</li>
-          </ul>
-        </dd>
-      </dl>
-      <button type="button" class="close-button" data-close aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script>
