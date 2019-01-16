@@ -43,12 +43,19 @@ function updateSyntax() {
     var actual = $('#act-field').val();
     var client = $('#client-field').val();
     var system = $('#sys-field').val();
-    var steps = '';
+    var abouts = '';
+    var requirements = '';
     var bugtext = '';
     for (var i = 1; i <= window.sct; i++) {
-        var step = $('#s' + i + '-field').val();
-        if (step) {
-            steps = steps + ' - ' + step;
+        var about = $('#s' + i + '-field').val();
+        if (about) {
+            abouts = abouts + ' - ' + about;
+        }
+    }
+    for (var i = 1; i <= window.sct; i++) {
+        var requirement = $('#s' + i + '-field').val();
+        if (requirement) {
+            requirements = requirements + ' - ' + requirement;
         }
     }
     if (desc && expected && actual && client && system && steps) {
@@ -58,13 +65,31 @@ function updateSyntax() {
     $('#lrg-rep').toggleClass('hidden', bugtext.length < 1400);
 }
 
-function addStep() {
+function addAbout() {
     window.sct++;
-    var stxt = '<div class="input-group" id="s' + window.sct + '-grp"><span class="input-group-label">Step ' + window.sct + '</span><input type="text" class="input-group-field" id="s' + window.sct + '-field"></div>';
-    $('#steps-fs').append(stxt);
+    var stxt = '<div class="input-group" id="s' + window.sct + '-grp"><span class="input-group-label">About ' + window.sct + '</span><input type="text" class="input-group-field" id="s' + window.sct + '-field"></div>';
+    $('#abouts-fs').append(stxt);
 }
 
-function removeStep(event) {
+function removeAbout(event) {
+    if (window.sct > 1) {
+        $('#s' + window.sct + '-grp').remove();
+        window.sct--;
+        if (typeof(event.data) !== 'undefined' && event.data.edit) {
+            updateEditSyntax();
+        } else {
+            updateSyntax();
+        }
+    }
+}
+
+function addRequirement() {
+    window.sct++;
+    var stxt = '<div class="input-group" id="s' + window.sct + '-grp"><span class="input-group-label">Requirement ' + window.sct + '</span><input type="text" class="input-group-field" id="s' + window.sct + '-field"></div>';
+    $('#requirements-fs').append(stxt);
+}
+
+function removeRequirement(event) {
     if (window.sct > 1) {
         $('#s' + window.sct + '-grp').remove();
         window.sct--;
