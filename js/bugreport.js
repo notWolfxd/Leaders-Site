@@ -49,13 +49,13 @@ function updateSyntax() {
     for (var i = 1; i <= window.sct; i++) {
         var step = $('#s' + i + '-field').val();
         if (step) {
-            steps = steps + ' - ' + step;
+            steps = steps + ' | ' + step;
         }
     }
      for (var i = 1; i <= window.rct; i++) {
         var req = $('#r' + i + '-field').val();
         if (req) {
-            reqs = reqs + ' - ' + req;
+            reqs = reqs + ' | ' + req;
         }
     }
     if (desc && expected && actual && client && system && steps) {
