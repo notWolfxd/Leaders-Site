@@ -44,7 +44,7 @@ function updateSyntax() {
     var client = $('#client-field').val();
     var system = $('#sys-field').val();
     var steps = '';
-    var steps2 = '';
+    var reqs = '';
     var bugtext = '';
     for (var i = 1; i <= window.sct; i++) {
         var step = $('#s' + i + '-field').val();
@@ -53,9 +53,9 @@ function updateSyntax() {
         }
     }
      for (var i = 1; i <= window.rct; i++) {
-        var step2 = $('#r' + i + '-field').val();
-        if (step2) {
-            steps2 = steps2 + ' - ' + step2;
+        var req = $('#r' + i + '-field').val();
+        if (req) {
+            reqs = reqs + ' - ' + req;
         }
     }
     if (desc && expected && actual && client && system && steps) {
@@ -82,16 +82,15 @@ function removeStep(event) {
         }
     }
 }
-
-function addStep2() {
+function addReq() {
     window.sct++;
-    var stxt = '<div class="input-group" id="r' + window.sct + '-grp"><span class="input-group-label">Step ' + window.sct + '</span><input type="text" class="input-group-field" id="r' + window.sct + '-field"></div>';
-    $('#steps2-fs').append(stxt);
+    var stxt = '<div class="input-group" id="s' + window.sct + '-grp"><span class="input-group-label">Step ' + window.sct + '</span><input type="text" class="input-group-field" id="s' + window.sct + '-field"></div>';
+    $('#reqs-fs').append(stxt);
 }
 
-function removeStep2(event) {
-    if (window.rct > 1) {
-        $('#r' + window.sct + '-grp').remove();
+function removeReq(event) {
+    if (window.sct > 1) {
+        $('#s' + window.sct + '-grp').remove();
         window.sct--;
         if (typeof(event.data) !== 'undefined' && event.data.edit) {
             updateEditSyntax();
