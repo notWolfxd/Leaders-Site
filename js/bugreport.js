@@ -83,15 +83,15 @@ function removeStep(event) {
     }
 }
 function addReq() {
-    window.sct++;
-    var stxt = '<div class="input-group" id="s' + window.sct + '-grp"><span class="input-group-label">Step ' + window.sct + '</span><input type="text" class="input-group-field" id="s' + window.sct + '-field"></div>';
-    $('#reqs-fs').append(stxt);
+    window.rct++;
+    var rtxt = '<div class="input-group" id="r' + window.rct + '-grp"><span class="input-group-label">Stesp ' + window.rct + '</span><input type="text" class="input-group-field" id="r' + window.rct + '-field"></div>';
+    $('#reqs-fs').append(rtxt);
 }
 
 function removeReq(event) {
-    if (window.sct > 1) {
-        $('#s' + window.sct + '-grp').remove();
-        window.sct--;
+    if (window.rct > 1) {
+        $('#r' + window.rct + '-grp').remove();
+        window.rct--;
         if (typeof(event.data) !== 'undefined' && event.data.edit) {
             updateEditSyntax();
         } else {
