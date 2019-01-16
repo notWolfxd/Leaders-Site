@@ -84,15 +84,15 @@ function removeStep(event) {
 }
 
 function addStep2() {
-    window.rct++;
-    var rtxt = '<div class="input-group" id="r' + window.rct + '-grp"><span class="input-group-label">Step ' + window.rct + '</span><input type="text" class="input-group-field" id="r' + window.rct + '-field"></div>';
-    $('#steps2-fs').append(rtxt);
+    window.sct++;
+    var stxt = '<div class="input-group" id="r' + window.sct + '-grp"><span class="input-group-label">Step ' + window.sct + '</span><input type="text" class="input-group-field" id="r' + window.sct + '-field"></div>';
+    $('#steps2-fs').append(stxt);
 }
 
 function removeStep2(event) {
     if (window.rct > 1) {
-        $('#r' + window.rct + '-grp').remove();
-        window.rct--;
+        $('#r' + window.sct + '-grp').remove();
+        window.sct--;
         if (typeof(event.data) !== 'undefined' && event.data.edit) {
             updateEditSyntax();
         } else {
