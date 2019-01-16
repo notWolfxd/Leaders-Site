@@ -44,11 +44,18 @@ function updateSyntax() {
     var client = $('#client-field').val();
     var system = $('#sys-field').val();
     var steps = '';
+    var steps2 = '';
     var bugtext = '';
     for (var i = 1; i <= window.sct; i++) {
         var step = $('#s' + i + '-field').val();
         if (step) {
             steps = steps + ' - ' + step;
+        }
+    }
+     for (var i = 1; i <= window.rct; i++) {
+        var step2 = $('#r' + i + '-field').val();
+        if (step2) {
+            steps2 = steps2 + ' - ' + step2;
         }
     }
     if (desc && expected && actual && client && system && steps) {
@@ -68,6 +75,24 @@ function removeStep(event) {
     if (window.sct > 1) {
         $('#s' + window.sct + '-grp').remove();
         window.sct--;
+        if (typeof(event.data) !== 'undefined' && event.data.edit) {
+            updateEditSyntax();
+        } else {
+            updateSyntax();
+        }
+    }
+}
+
+function addStep2() {
+    window.rct++;
+    var rtxt = '<div class="input-group" id="r' + window.rct + '-grp"><span class="input-group-label">Step ' + window.rct + '</span><input type="text" class="input-group-field" id="r' + window.rct + '-field"></div>';
+    $('#steps2-fs').append(rtxt);
+}
+
+function removeStep2(event) {
+    if (window.rct > 1) {
+        $('#r' + window.rct + '-grp').remove();
+        window.rct--;
         if (typeof(event.data) !== 'undefined' && event.data.edit) {
             updateEditSyntax();
         } else {
