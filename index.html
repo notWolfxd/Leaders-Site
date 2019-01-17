@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css" integrity="sha256-itWEYdFWzZPBG78bJOOiQIn06QCgN/F0wMDcC4nOhxY=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="css/bugreport.css" />
+    <link rel="stylesheet" type="text/css" href="css/leaders.css" />
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="icon" type="image/png" href="images/favicon-192x192.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" sizes="180x180" />
@@ -57,14 +57,14 @@
           <li>You can only post every 5 hours.</li>
         </ul>
       </div>
-      <label for="desc-field">Short Description</label>
-      <p class="help-text" id="desc-help">Describe your bug in a single sentence</p>
+      <label for="desc-field">Gamemode:</label>
+      <p class="help-text" id="desc-help">Which gamemode are you recruiting for (factions, skyblock, or prison)?</p>
       <input type="text" id="desc-field" aria-describedby="desc-help" required>
-      <label for="exp-field">Expected Result</label>
-      <p class="help-text" id="exp-help">What *should* happen when following the steps? (i.e. if the bug didn't occur)</p>
+      <label for="exp-field">Team Name:</label>
+      <p class="help-text" id="exp-help">What is the name of your team?</p>
       <input type="text" id="exp-field" aria-describedby="exp-help" required>
-      <label>Steps to Reproduce</label>
-      <p class="help-text" id="steps-help">Write each step others would have to follow to reproduce the bug. Note: Dashes will be added automatically for each step. To add/remove fields, you can use the buttons below</p>
+      <label>About:</label>
+      <p class="help-text" id="steps-help">About Your Team (max 3 points)</p>
       <div class="callout mbox" id="steps-fs">
         <div class="button-group small">
           <button type="button" class="button" id="add-btn"><i class="fas fa-plus"></i> Add</button>
@@ -75,8 +75,8 @@
           <input type="text" class="input-group-field" id="s1-field" required>
         </div>
       </div>
-      <label>St eps t oR e pr o du ce</label>
-      <p class="help-text" id="reqs-help">Write each step others would have to follow to reproduce the bug. Note: Dashes will be added automatically for each step. To add/remove fields, you can use the buttons below</p>
+      <label>Requirements:</label>
+      <p class="help-text" id="reqs-help">Requirements to Join Your Team (max 3 points)</p>
       <div class="callout mbox" id="reqs-fs">
         <div class="button-group small">
           <button type="button" class="button" id="addd-btn"><i class="fas fa-plus"></i> Add</button>
@@ -87,14 +87,14 @@
           <input type="text" class="input-group-field" id="s1-field" required>
         </div>
       </div>
-      <label for="act-field">Actual Result</label>
-      <p class="help-text" id="act-help">What *actually* happens when following the steps?</p>
+      <label for="act-field">Team Link:</label>
+      <p class="help-text" id="act-help">What is the link to join your team's discord??</p>
       <input type="text" id="act-field" aria-describedby="act-help" required>
       <div class="callout warn hidden" id="lrg-rep">
         <p>Your report is quite large. Consider shortening it to ensure that it can be accepted by Bug Bot and Bug Hunters are able to approve/deny</p>
       </div>
-      <label>Report Syntax</label>
-      <p class="help-text" id="syntax-help">Copy the report text below and paste it into the appropriate bug reporting channel. Note: This field will be empty until all required fields are filled in</p>
+      <label>Recruit Syntax</label>
+      <p class="help-text" id="syntax-help">Copy the syntax text below and paste it into the commands channel. Note: This field will be empty until all required fields are filled in</p>
       <div class="callout syntaxbox">
         <pre class="bug-syntax" id="syntax"></pre>
         <button type="button" class="button cb-btn" id="copy-btn">Copy</button>
@@ -103,7 +103,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js"></script>
-    <script src="js/bugreport.js"></script>
+    <script src="js/leaders.js"></script>
     <script>
       $(document).foundation();
       $(document).ready(pageLoad('create'));
