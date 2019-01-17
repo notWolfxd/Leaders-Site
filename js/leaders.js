@@ -47,11 +47,11 @@ function updateSyntax() {
     for (var i = 1; i <= window.sct; i++) {
         var step = $('#s' + i + '-field').val();
         if (step) {
-            steps = steps + ' - ' + step;
+            steps = steps + ' | ' + step;
         }
     }
-    for (var i = 1; i <= window.sct; i++) {
-        var req = $('#s' + i + '-field').val();
+    for (var i = 1; i <= window.nct; i++) {
+        var req = $('#n' + i + '-field').val();
         if (req) {
             reqs = reqs + ' | ' + req;
         }
@@ -82,15 +82,15 @@ function removeStep(event) {
     }
 }
 function addReq() {
-    window.sct++;
-    var stxt = '<div class="input-group" id="s' + window.sct + '-grp"><span class="input-group-label">Req ' + window.sct + '</span><input type="text" class="input-group-field" id="s' + window.sct + '-field"></div>';
-    $('#reqs-fs').append(stxt);
+    window.nct++;
+    var ntxt = '<div class="input-group" id="n' + window.nct + '-grp"><span class="input-group-label">Req ' + window.nct + '</span><input type="text" class="input-group-field" id="n' + window.nct + '-field"></div>';
+    $('#reqs-fs').append(ntxt);
 }
 
 function removeReq(event) {
-    if (window.sct > 1) {
-        $('#s' + window.sct + '-grp').remove();
-        window.sct--;
+    if (window.nct > 1) {
+        $('#s' + window.nct + '-grp').remove();
+        window.nct--;
         if (typeof(event.data) !== 'undefined' && event.data.edit) {
             updateEditSyntax();
         } else {
@@ -176,6 +176,7 @@ function switchMode() {
 
 function pageLoad(page) {
     window.sct = 1;
+    window.nct = 1;
     var cb_btn = '';
     var st = '';
     switch (page) {
