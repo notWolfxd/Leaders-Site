@@ -58,7 +58,7 @@ function updateSyntax() {
     }
 
     if (desc && expected && actual && steps && reqs) {
-        bugtext = '-recruit ' + ' | ' + desc + ' | ' + expected + ' | ' + steps + ' | ' + reqs + ' | ' + actual;
+        bugtext = '-recruit ' + desc + expected + steps + reqs + actual;
     }
     $('#syntax').text(bugtext);
     $('#lrg-rep').toggleClass('hidden', bugtext.length < 1400);
