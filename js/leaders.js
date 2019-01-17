@@ -44,6 +44,18 @@ function updateSyntax() {
     var steps = '';
     var reqs = '';
     var bugtext = '';
+    for (var i = 1; i <= window.sct; i++) {
+        var step = $('#s' + i + '-field').val();
+        if (step) {
+            steps = steps + ' - ' + step;
+        }
+    }
+    for (var i = 1; i <= window.sct; i++) {
+        var req = $('#s' + i + '-field').val();
+        if (req) {
+            reqs = reqs + ' | ' + req;
+        }
+    }
 
     if (desc && expected && actual && steps && reqs) {
         bugtext = '-recruit ' + desc + ' | ' + expected + ' | ' + steps + ' | ' + reqs + ' | ' + actual;
