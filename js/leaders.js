@@ -89,7 +89,7 @@ function addReq() {
 
 function removeReq(event) {
     if (window.nct > 1) {
-        $('#s' + window.nct + '-grp').remove();
+        $('#n' + window.nct + '-grp').remove();
         window.nct--;
         if (typeof(event.data) !== 'undefined' && event.data.edit) {
             updateEditSyntax();
@@ -176,7 +176,7 @@ function switchMode() {
 
 function pageLoad(page) {
     window.sct = 1;
-    window.nct = 1;
+    window.nct = 2;
     var cb_btn = '';
     var st = '';
     switch (page) {
