@@ -59,8 +59,13 @@
         </ul>
       </div>
       <label for="desc-field">Gamemode:</label>
-      <p class="help-text" id="desc-help">Which gamemode are you recruiting for (factions, skyblock, or prison)?</p>
-      <input type="text" id="desc-field" aria-describedby="desc-help" required>
+      <p class="help-text" id="desc-field">Which gamemode are you recruiting for?</p>
+      <select id="gamemode">
+        <option value="desc">skyblock</option>
+        <option value="steps">prison</option>
+        <option value="exp">factions</option>
+      </select>
+      <div id="desc-field"></div>
       <label for="exp-field">Team Name:</label>
       <p class="help-text" id="exp-help">What is the name of your team?</p>
       <input type="text" id="exp-field" aria-describedby="exp-help" required>
