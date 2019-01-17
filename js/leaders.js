@@ -41,14 +41,12 @@ function updateSyntax() {
     var desc = $('#desc-field').val();
     var expected = $('#exp-field').val();
     var actual = $('#act-field').val();
-    var client = $('#client-field').val();
-    var system = $('#sys-field').val();
     var steps = '';
     var reqs = '';
     var bugtext = '';
 
-    if (desc && expected && actual && client && system && steps) {
-        bugtext = '!submit ' + desc + ' | Steps to Reproduce:' + steps + ' Expected Result: ' + expected + ' Actual Result: ' + actual + ' Client Settings: ' + client + ' System Settings: ' + system;
+    if (desc && expected && actual && steps && reqs) {
+        bugtext = '-recruit ' + desc + ' | ' + expected + ' | ' + steps + ' | ' + reqs + ' | ' + actual;
     }
     $('#syntax').text(bugtext);
     $('#lrg-rep').toggleClass('hidden', bugtext.length < 1400);
@@ -56,7 +54,7 @@ function updateSyntax() {
 
 function addStep() {
     window.sct++;
-    var stxt = '<div class="input-group" id="s' + window.sct + '-grp"><span class="input-group-label">Step ' + window.sct + '</span><input type="text" class="input-group-field" id="s' + window.sct + '-field"></div>';
+    var stxt = '<div class="input-group" id="s' + window.sct + '-grp"><span class="input-group-label">About ' + window.sct + '</span><input type="text" class="input-group-field" id="s' + window.sct + '-field"></div>';
     $('#steps-fs').append(stxt);
 }
 
