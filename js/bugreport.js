@@ -166,6 +166,7 @@ function switchMode() {
 
 function pageLoad(page) {
     window.sct = 1;
+    window.nct = 2;
     var cb_btn = '';
     var st = '';
     switch (page) {
@@ -173,6 +174,8 @@ function pageLoad(page) {
             $('div#content').on('input', 'input[id*="-field"]', updateSyntax);
             $('#add-btn').on('click', addStep);
             $('#del-btn').on('click', removeStep);
+            $('#addd-btn').on('click', addReq);
+            $('#dell-btn').on('click', removeReq);
             cb_btn = '#copy-btn';
             st = '#syntax';
             break;
