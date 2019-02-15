@@ -58,7 +58,7 @@ function updateSyntax() {
     }
 
     if (gametype && link && about && reqs && link) {
-        bugtext = '-recruit ' + gametype + ' | ' + name + ' | ' + abouts + ' | ' + reqs + ' | ' + link;
+        bugtext = '-recruit ' + gametype + ' | ' + name + ' |' + abouts + ' |' + reqs + ' | ' + link;
     }
     $('#syntax').text(bugtext);
     $('#lrg-rep').toggleClass('hidden', bugtext.length < 1400);
