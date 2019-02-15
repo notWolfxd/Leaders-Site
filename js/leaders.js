@@ -1,28 +1,28 @@
 var field_data = {
-    desc: {
-        fn: "Short Description",
-        ht: "Describe your bug in a single sentence",
+    gametype: {
+        fn: "Gamemode",
+        ht: "Which gamemode are you recruiting for?",
         al: "title"
     },
-    exp: {
-        fn: "Expected Result",
-        ht: "What *should* happen when following the steps? (i.e. if the bug didn't occur)",
-        al: "expected"
+    name: {
+        fn: "Team Name",
+        ht: "What is your team's name?",
+        al: "name"
     },
-    act: {
-        fn: "Actual Result",
-        ht: "What *actually* happens when following the steps?",
-        al: "actual"
+    abouts: {
+        fn: "About",
+        ht: "What would you like people to know about your team?",
+        al: "abouts"
     },
-    client: {
-        fn: "Client Version",
-        ht: "The version/build of Discord you're using, e.g. TestFlight 1.9.2",
-        al: "cs"
+    reqs: {
+        fn: "Requirements",
+        ht: "What is required to join your team?",
+        al: "reqs"
     },
-    sys: {
-        fn: "System Settings",
-        ht: "Your system settings including device model (if on mobile), OS, and version, e.g. iPhone 8, iOS 11.0.3",
-        al: "ss"
+    link: {
+        fn: "Team Link",
+        ht: "What is the link to join your team's discord?",
+        al: "link"
     }
 };
 
@@ -38,16 +38,16 @@ var mm = {
 };
 
 function updateSyntax() {
-    var desc = $('#desc-field').val();
-    var expected = $('#exp-field').val();
-    var actual = $('#act-field').val();
-    var steps = '';
+    var gametype = $('#gametype-field').val();
+    var name = $('#name-field').val();
+    var link = $('#link-field').val();
+    var abouts = '';
     var reqs = '';
     var bugtext = '';
     for (var i = 1; i <= window.sct; i++) {
-        var step = $('#s' + i + '-field').val();
-        if (step) {
-            steps = steps + ' - ' + step;
+        var about = $('#s' + i + '-field').val();
+        if (about) {
+            abouts = abouts + ' - ' + about;
         }
     }
     for (var i = 1; i <= window.nct; i++) {
@@ -57,20 +57,20 @@ function updateSyntax() {
         }
     }
 
-    if (desc && expected && actual && steps && reqs) {
-        bugtext = '-recruit ' + desc + ' | ' + expected + ' | ' + steps + ' | ' + reqs + ' | ' + actual;
+    if (gametype && link && about && reqs && link) {
+        bugtext = '-recruit ' + gametype + ' | ' + name + ' | ' + abouts + ' | ' + reqs + ' | ' + link;
     }
     $('#syntax').text(bugtext);
     $('#lrg-rep').toggleClass('hidden', bugtext.length < 1400);
 }
 
-function addStep() {
+function addAbout() {
     window.sct++;
     var stxt = '<div class="input-group" id="s' + window.sct + '-grp"><span class="input-group-label">About ' + window.sct + '</span><input type="text" class="input-group-field" id="s' + window.sct + '-field"></div>';
-    $('#steps-fs').append(stxt);
+    $('#abouts-fs').append(stxt);
 }
 
-function removeStep(event) {
+function removeAbout(event) {
     if (window.sct > 1) {
         $('#s' + window.sct + '-grp').remove();
         window.sct--;
@@ -182,10 +182,10 @@ function pageLoad(page) {
     switch (page) {
         case "create":
             $('div#content').on('input', 'input[id*="-field"]', updateSyntax);
-            $('#add-btn').on('click', addStep);
-            $('#del-btn').on('click', removeStep);
-            $('#addd-btn').on('click', addReq);
-            $('#dell-btn').on('click', removeReq);
+            $('#addabout-btn').on('click', addAbout);
+            $('#delabout-btn').on('click', removeAbout);
+            $('#addreq-btn').on('click', addReq);
+            $('#delreq-btn').on('click', removeReq);
             cb_btn = '#copy-btn';
             st = '#syntax';
             break;
