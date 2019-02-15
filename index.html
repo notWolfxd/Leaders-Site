@@ -26,25 +26,27 @@
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu show-for-small-only">
-          <li class="menu-text">VanityM Leader Format Tool</li>
+          <li class="menu-text">VanityMC Leader Format Tool</li>
           <li class="act-pg"><a href="./"><i class="far fa-plus-square"></i></a></li>
           <li><a href="./edit"><i class="far fa-edit"></i></a></li>
           <li><a id="switch-mobile"><i class="far fa-sun"></i></a></li>
         </ul>
         <ul class="menu show-for-medium">
           <li class="menu-text">VanityMC Leader Format Tool</li>
-          <li class="act-pg"><a href="./"><i class="far fa-plus-square"></i> Create</a></li>
-          <li><a href="./edit"><i class="far fa-edit"></i> Edit</a></li>
+          <li class="act-pg"><a href="./"><i class="far fa-plus-square"></i> Leaders</a></li>
+          <li><a href="./edit"><i class="far fa-edit"></i> Bugs</a></li>
         </ul>
       </div>
+      
       <div class="top-bar-right show-for-medium">
         <ul class="menu">
           <li><a id="switch-desktop"><i class="far fa-sun"></i> Light Mode</a></li>
         </ul>
       </div>
     </div><br />
+    
     <div class="column row" id="content">
-      <h5>Format your leader post</h5>
+      <h5>Format your recruitment post</h5>
       <div class="callout mbox">
         <strong>Remember:</strong>
         <ul>
@@ -55,49 +57,56 @@
         </div></li>
           <li>You need a leader role to actually used this command. Ask a <strong class="bh">Sr. Mod+</strong> for the role!</li>
           <li>You can only post every 5 hours.</li>
-          <li>Keep the gamemode section all lowercases for the time being.</li>
+          <li>Using the tool for malicious intent will lead to a ban.</li>
         </ul>
       </div>
-      <label for="desc-field">Gamemode:</label>
-      <p class="help-text" id="desc-help">Which gamemode are you recruiting for (factions, skyblock, or prison)?</p>
-      <input type="text" id="desc-field" aria-describedby="desc-help" required>
-      <label for="exp-field">Team Name:</label>
-      <p class="help-text" id="exp-help">What is the name of your team?</p>
-      <input type="text" id="exp-field" aria-describedby="exp-help" required>
+      
+      <label for="gametype-field">Gamemode:</label>
+      <p class="help-text" id="gametype-help">Which gamemode are you recruiting for (factions, skyblock, or prison)?</p>
+      <input type="text" id="gametype-field" aria-describedby="gametype-help" required>
+      
+      <label for="name-field">Team Name:</label>
+      <p class="help-text" id="name-help">What is the name of your team?</p>
+      <input type="text" id="name-field" aria-describedby="name-help" required>
+      
       <label>About:</label>
-      <p class="help-text" id="steps-help">About Your Team (MUST HAVE 3)</p>
-      <div class="callout mbox" id="steps-fs">
+      <p class="help-text" id="about-help">What would you like people to know about your team?</p>
+      <div class="callout mbox" id="abouts-fs">
         <div class="button-group small">
-          <button type="button" class="button" id="add-btn"><i class="fas fa-plus"></i> Add</button>
-          <button type="button" class="button" id="del-btn"><i class="fas fa-minus"></i> Remove</button>
+          <button type="button" class="button" id="addabout-btn"><i class="fas fa-plus"></i> Add</button>
+          <button type="button" class="button" id="delabout-btn"><i class="fas fa-minus"></i> Remove</button>
         </div>
         <div class="input-group" id="s1-grp">
           <span class="input-group-label">About 1</span>
           <input type="text" class="input-group-field" id="s1-field" required>
         </div>
       </div>
+      
       <label>Requirements:</label>
       <p class="help-text" id="reqs-help">Requirements to Join Your Team (MUST HAVE 3)</p>
       <div class="callout mbox" id="reqs-fs">
         <div class="button-group small">
-          <button type="button" class="button" id="addd-btn"><i class="fas fa-plus"></i> Add</button>
-          <button type="button" class="button" id="dell-btn"><i class="fas fa-minus"></i> Remove</button>
+          <button type="button" class="button" id="addreq-btn"><i class="fas fa-plus"></i> Add</button>
+          <button type="button" class="button" id="delreq-btn"><i class="fas fa-minus"></i> Remove</button>
         </div>
         <div class="input-group" id="n1-grp">
           <span class="input-group-label">Req 1</span>
           <input type="text" class="input-group-field" id="n1-field" required>
         </div>
       </div>
-      <label for="act-field">Team Link:</label>
-      <p class="help-text" id="act-help">What is the link to join your team's discord??</p>
-      <input type="text" id="act-field" aria-describedby="act-help" required>
+      
+      <label for="link-field">Team Link:</label>
+      <p class="help-text" id="link-help">What is the link to join your team's discord??</p>
+      <input type="text" id="link-field" aria-describedby="link-help" required>
+      
       <div class="callout warn hidden" id="lrg-rep">
-        <p>People don't want to read your English essay when reading your recruitment post. Shorten it or Nyx will not accept it!</p>
+        <p>People don't want to read your English essay when reading your recruitment post. Shorten it or the bot cannot send it!</p>
       </div>
+      
       <label>Recruit Syntax</label>
       <p class="help-text" id="syntax-help">Copy the syntax text below and paste it into the commands channel. Note: This field will be empty until all required fields are filled in</p>
       <div class="callout syntaxbox">
-        <pre class="bug-syntax" id="syntax"></pre>
+        <pre class="recruit-syntax" id="syntax"></pre>
         <button type="button" class="button cb-btn" id="copy-btn">Copy</button>
       </div>
     </div>
